@@ -1,0 +1,10 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+
+### Update request state
+
+PUT {{HostAddress}}/api/v1/request/update-state/6731f6df-b135-4064-9dbb-b362a1a8bafb
+Content-Type: application/json
+
+{
+  "newState": 2
+}

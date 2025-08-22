@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Register request form</h2>
+
+<div>
+    <div>
+        <label>User name:</label>
+    </div>
+    <div>
+        <input type="text" Id="UserName" />
+    </div>
+    <div>
+        <label>Request text</label>
+    </div>
+    <div>
+        <textarea Id="RequestText"></textarea>
+    </div>
+    <div>
+        <button type="button" id="btnRegisterUser">Register request</button>
+    </div>
+    <div>
+        <label id="Result"></label>
+    </div>
+</div>
+
+@section Scripts{
+
+    <script type="text/javascript">
+
+        $(() => {
+
+            $("#btnRegisterUser").click(function () {
+
+                var userName = $("#UserName").val();
+                var requestText = $("#RequestText").val();
+
+                var requestDto = { UserName: userName, RequestText: requestText };
+                console.log(requestDto);
+                
+                var request = $.ajax({
+                    url: "/UserRequest/RegisterRequest",
+                    //data: "UserName=" + requestDto.UserName + "&RequestText=" + requestDto.RequestText,
+                    data: JSON.stringify(requestDto),
+                    type: "POST",
+                    contentType: 'application/json',
+                    dataType: 'json'
+                })
+
+                request.done(function (responseDto, y) {
+
+                    if (responseDto.StatusCode == 201) {
+                        $("#Result").text("Request registered with traceId: " + responseDto.TraceId)
+                    }
+
+                });
+
+            })
+
+        })
+
+    </script>
+
+}
+
+
+

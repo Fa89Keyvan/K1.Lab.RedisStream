@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="HttpClient\http-client.env.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="HttpClient\http-client.env.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\K1.Lab.RedisStream.Shared\K1.Lab.RedisStream.Shared.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35913.81
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K1.Lab.RedisStream.Consumer", "K1.Lab.RedisStream\K1.Lab.RedisStream.Consumer.csproj", "{03E9EC99-7368-488B-B9FF-BBBED0C4F992}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K1.Lab.RedisStream.Publisher", "K1.Lab.RedisStream.Publisher\K1.Lab.RedisStream.Publisher.csproj", "{790A94CB-D725-4067-8DC3-8B640F40CFA8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "K1.Lab.RedisStream.Shared", "K1.Lab.RedisStream.Shared\K1.Lab.RedisStream.Shared.csproj", "{BF450F29-17C5-4D99-B74B-2E88A5C7D403}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0.Shared", "0.Shared", "{02EA681E-C7D8-13C7-8484-4AC65E1B71E8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03E9EC99-7368-488B-B9FF-BBBED0C4F992}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03E9EC99-7368-488B-B9FF-BBBED0C4F992}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03E9EC99-7368-488B-B9FF-BBBED0C4F992}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03E9EC99-7368-488B-B9FF-BBBED0C4F992}.Release|Any CPU.Build.0 = Release|Any CPU
+		{790A94CB-D725-4067-8DC3-8B640F40CFA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{790A94CB-D725-4067-8DC3-8B640F40CFA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{790A94CB-D725-4067-8DC3-8B640F40CFA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{790A94CB-D725-4067-8DC3-8B640F40CFA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF450F29-17C5-4D99-B74B-2E88A5C7D403}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF450F29-17C5-4D99-B74B-2E88A5C7D403}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF450F29-17C5-4D99-B74B-2E88A5C7D403}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF450F29-17C5-4D99-B74B-2E88A5C7D403}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{BF450F29-17C5-4D99-B74B-2E88A5C7D403} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8B560261-AEF6-40F7-8D59-8E34C79A0969}
+	EndGlobalSection
+EndGlobal
