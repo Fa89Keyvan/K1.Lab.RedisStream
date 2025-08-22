@@ -15,6 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="StackExchange.Redis" Version="2.9.11" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\K1.Lab.RedisStream.Shared\K1.Lab.RedisStream.Shared.csproj" />
   </ItemGroup>
 
