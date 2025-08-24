@@ -1,6 +1,7 @@
 using K1.Lab.RedisStream.Publisher.Models;
+using K1.Lab.RedisStream.Publisher.Redis.DependencyInjection;
+using K1.Lab.RedisStream.Publisher.Redis.Repository;
 using K1.Lab.RedisStream.Shared.Models;
-using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace K1.Lab.RedisStream.Publisher
@@ -11,6 +12,9 @@ namespace K1.Lab.RedisStream.Publisher
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Services.AddRedis();
+            builder.Services.AddScoped<IRequestStateChangedRepository, RequestStateChangedRedisStreamRepository>();
 
             var app = builder.Build();
 
@@ -29,7 +33,9 @@ namespace K1.Lab.RedisStream.Publisher
                 return Results.Json(responseDto);
             });
 
-            app.MapPut("/api/v1/request/update-state/{traceId:guid}", (Guid traceId, UpdateStateRequestDto requestDto) =>
+            app.MapPut("/api/v1/request/update-state/{traceId:guid}",
+                async ([FromServices] IRequestStateChangedRepository requestStateChangedRepo, 
+                Guid traceId, UpdateStateRequestDto requestDto) =>
             {
                 var request = Requests.FirstOrDefault(request => request.Identifier == traceId);
                 if (request is null)
@@ -38,6 +44,9 @@ namespace K1.Lab.RedisStream.Publisher
                 }
 
                 request.RequestState = requestDto.NewState;
+
+                await requestStateChangedRepo.AddAsync(request);
+
                 return Results.Ok();
             });
 

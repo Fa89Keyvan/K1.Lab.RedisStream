@@ -2,9 +2,9 @@
 
 ### Update request state
 
-PUT {{HostAddress}}/api/v1/request/update-state/6731f6df-b135-4064-9dbb-b362a1a8bafb
+PUT {{HostAddress}}/api/v1/request/update-state/ec521f88-7b0b-41ed-87e5-e23475649adc
 Content-Type: application/json
 
 {
-  "newState": 2
+  "newState": 1
 }
